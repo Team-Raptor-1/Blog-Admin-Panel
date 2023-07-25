@@ -1,0 +1,90 @@
+#update {
+  
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    overflow: hidden;
+    width: 80%;
+}
+
+#update .from {
+
+   
+    height: 80vh;
+    width: 50%;
+
+}
+
+.fromContainer {
+ 
+  
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.fromContainer input {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+   border: none;
+   border: 2px solid black;
+
+}
+
+.fromContainer textarea{
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid black;
+}
+
+.btn{
+
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btn button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#bl{
+    text-decoration: none;
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+
+    #update{
+      
+        width: 100%;
+    }
+
+    #update .from {
+       
+        width: 95%;
+        height: 90vh;
+    }
+
+
+
+}
