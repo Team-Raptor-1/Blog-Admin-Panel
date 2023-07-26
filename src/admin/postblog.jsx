@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './css2/postblog.css';
 
 const BlogForm = () => {
@@ -7,13 +6,24 @@ const BlogForm = () => {
   const [secondaryImage, setSecondaryImage] = useState(null);
   const [titleText, setTitleText] = useState('');
   const [blogText, setBlogText] = useState('');
+  const primaryImageInputRef = useRef(null);
+  const secondaryImageInputRef = useRef(null);
 
   const handlePrimaryImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPrimaryImage(reader.result);
+        const image = new Image();
+        image.src = reader.result;
+        image.onload = () => {
+          if (image.width > 400 || image.height > 400) {
+            alert('Please resize the image to 400x400 pixels or below.');
+            primaryImageInputRef.current.value = '';
+            return;
+          }
+          setPrimaryImage(reader.result);
+        };
       };
       reader.readAsDataURL(file);
     }
@@ -24,7 +34,16 @@ const BlogForm = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setSecondaryImage(reader.result);
+        const image = new Image();
+        image.src = reader.result;
+        image.onload = () => {
+          if (image.width > 400 || image.height > 400) {
+            alert('Please resize the image to 400x400 pixels or below.');
+            secondaryImageInputRef.current.value = '';
+            return;
+          }
+          setSecondaryImage(reader.result);
+        };
       };
       reader.readAsDataURL(file);
     }
@@ -60,6 +79,7 @@ const BlogForm = () => {
             accept="image/*"
             onChange={handlePrimaryImageChange}
             required
+            ref={primaryImageInputRef}
           />
           {primaryImage && (
             <img
@@ -79,6 +99,7 @@ const BlogForm = () => {
             accept="image/*"
             onChange={handleSecondaryImageChange}
             required
+            ref={secondaryImageInputRef}
           />
           {secondaryImage && (
             <img
