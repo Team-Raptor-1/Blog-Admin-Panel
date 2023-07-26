@@ -1,7 +1,6 @@
 import { AiFillDelete } from "react-icons/ai";
-import { GrUpdate } from "react-icons/gr";
+import {AiFillEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
 import React from 'react';
 import '../styles/AllBlogs.css';
 import img1 from '../images/img1.jpg';
@@ -22,7 +21,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -32,7 +31,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -42,7 +41,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -52,7 +51,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -62,7 +61,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -72,7 +71,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -82,7 +81,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -93,7 +92,7 @@ const AllBlogs = () => {
       title: "lorem ipsum",
       address: "Air Conditioner",
       dot: <AiFillDelete />,
-      location: <GrUpdate />,
+      location: <AiFillEdit />,
 
     },
 
@@ -120,13 +119,7 @@ const AllBlogs = () => {
       <div className="scroll">
 
 
-        {/* <div className="details">
-          <p>Image</p>
-          <p>Title</p>
-          <p>Category</p>
-
-        </div> */}
-
+       
 
         <div className="objects">
           {blogs.map(function (data) {
@@ -149,16 +142,8 @@ const AllBlogs = () => {
                   <span >{data.address}</span>
                 </div>
 
-                {/* <div className="icons">
-                    <p>{data.dot}</p>
-                    <p>{data.location}</p>
-                  </div>  */}
-
-                {/* <span>sdfs</span>
-                  <span>sdfs</span> */}
-
-
-                <p>{data.dot} &nbsp; <Link to="/update">{data.location}</Link> </p>
+                    
+                <p>{data.dot} &nbsp; <Link to="/update"><AiFillEdit style={{ color: 'black' }}/></Link> </p>
 
 
 
